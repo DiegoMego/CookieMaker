@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CookieMaker</string>
+    <string name="add_recipe">Agregar</string>
+    <string name="scroll_recipe_list_description">Listado de Recetas</string>
 </resources>
