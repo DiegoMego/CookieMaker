@@ -30,38 +30,38 @@
         android:contentDescription="@string/scroll_recipe_list_description">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/galletas_1"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="16dp"
-                    android:text="Galletas de Mantequilla"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Galletas de Mantequilla"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:layout_alignParentBottom="true"
-                    android:src="@drawable/galletas_1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="16dp"
+                    android:paddingBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diego Mego"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:paddingTop="16dp"/>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
