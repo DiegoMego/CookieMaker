@@ -11,7 +11,7 @@ import pe.edu.ulima.cookiemaker.model.Ingrediente
 
 class IngredientsListAdapater(
     private val ingredientsList : List<Ingrediente>,
-    private val fragment : Fragment,
+    //private val fragment : Fragment,
     private val listener : (Ingrediente) ->  Unit) :
     RecyclerView.Adapter<IngredientsListAdapater.ViewHolder>() {
         class ViewHolder(
