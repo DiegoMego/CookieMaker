@@ -24,7 +24,10 @@ class LoginActivity : AppCompatActivity() {
             }else {
                 //Pasar a otro activity
                 val intent : Intent = Intent()
-                intent.setClass(this, RecipeListActivity::class.java)
+                intent.setClass(this, MainActivity::class.java)
+                val bundle : Bundle = Bundle()
+                bundle.putString("username", eteName.text.toString())
+                intent.putExtra("data", bundle)
                 startActivity(intent)
             }
         }
