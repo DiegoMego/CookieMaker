@@ -1,5 +1,6 @@
 package pe.edu.ulima.cookiemaker.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,17 @@ import pe.edu.ulima.cookiemaker.model.Ingrediente
 import pe.edu.ulima.cookiemaker.model.RecetasManager
 
 class RecipeRegistrationFragment : Fragment() {
+
+    interface OnIngredientSelectedListener {
+        fun OnSelect(ingredient : Ingrediente)
+    }
+    private var listener : OnIngredientSelectedListener? = null
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as OnIngredientSelectedListener
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,7 +40,7 @@ class RecipeRegistrationFragment : Fragment() {
             IngredientsListAdapater(
                 RecetasManager().getIngredientes()
             )  { ingredient : Ingrediente ->
-                Log.i("SelectIngredientFragment", ingredient.nombre)
+                listener?.OnSelect(ingredient)
             }
     }
 }
