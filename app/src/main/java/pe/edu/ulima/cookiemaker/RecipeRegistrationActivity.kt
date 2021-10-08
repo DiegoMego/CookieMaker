@@ -24,7 +24,7 @@ class RecipeRegistrationActivity : AppCompatActivity() {
             }else {
                 //Pasar a otro activity
                 val intent : Intent = Intent()
-                intent.setClass(this, RecipeListActivity::class.java)
+                intent.setClass(this, RecipeListFragment::class.java)
                 startActivity(intent)
             }
         }

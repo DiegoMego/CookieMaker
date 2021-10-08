@@ -4,11 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/CookieMaker/app/src/main/res/drawable/rect.xml" value="0.5703125" />
+        <entry key="..\:/Android/CookieMaker/app/src/main/res/drawable/text_border.xml" value="0.34322916666666664" />
         <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/activity_login.xml" value="0.32708333333333334" />
+        <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/activity_main.xml" value="0.32708333333333334" />
         <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/activity_recipe_details.xml" value="0.32708333333333334" />
         <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/activity_recipe_list.xml" value="0.3307291666666667" />
         <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/activity_recipe_registration.xml" value="0.32708333333333334" />
         <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/activity_select_ingredient.xml" value="0.3307291666666667" />
+        <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/fragment_recipe_item.xml" value="0.32708333333333334" />
+        <entry key="..\:/Android/CookieMaker/app/src/main/res/layout/fragment_recipe_list.xml" value="0.32708333333333334" />
       </map>
     </option>
   </component>
