@@ -12,7 +12,6 @@ import pe.edu.ulima.pm.ulgamestore.model.Receta
 
 class RecipeListAdapter(
     private val recipeList :List<Receta>,
-    private val fragment : Fragment,
     private val listener : (Receta) -> Unit) :
         RecyclerView.Adapter<RecipeListAdapter.ViewHolder>() {
             class ViewHolder(
