@@ -9,14 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CookieMaker">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
 
-        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,20 +21,9 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name=".fragments.RecipeListFragment"
-            android:exported="true">
-
-        </activity>
 
         <activity
-            android:name=".RecipeRegistrationActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".SelectIngredientActivity"
+            android:name=".MainActivity"
             android:exported="true">
 
         </activity>
