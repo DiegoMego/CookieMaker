@@ -2,11 +2,9 @@ package pe.edu.ulima.cookiemaker.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
@@ -14,8 +12,7 @@ import pe.edu.ulima.cookiemaker.adapter.IngredientsListAdapater
 import pe.edu.ulima.cookiemaker.model.Ingrediente
 import pe.edu.ulima.cookiemaker.model.RecetasManager
 
-class FragmentSelectIngredient : Fragment() {
-
+class SelectIngredientFragment : Fragment() {
     interface OnIngredientSelectedListener {
         fun OnSelect(ingredient : Ingrediente)
     }
