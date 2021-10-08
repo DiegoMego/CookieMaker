@@ -1,4 +1,4 @@
-package pe.edu.ulima.pm.ulgamestore.model
+package pe.edu.ulima.cookiemaker.model
 
 class RecetasManager {
 
@@ -11,6 +11,11 @@ class RecetasManager {
         mIngredientes.add(Ingrediente("Harina"))
         mIngredientes.add(Ingrediente("Vainilla"))
         mIngredientes.add(Ingrediente("Polvo de Hornear"))
+        mIngredientes.add(Ingrediente("Leche"))
+        mIngredientes.add(Ingrediente("Chocolate"))
+        mIngredientes.add(Ingrediente("Huevo"))
+        mIngredientes.add(Ingrediente("Ralladura de piel de naranja"))
+        mIngredientes.add(Ingrediente("Ralladura de piel de limon"))
     }
 
     companion object {
@@ -40,6 +45,4 @@ class RecetasManager {
     fun getIngredientes() : List<Ingrediente> {
         return mIngredientes
     }
-
-
 }
