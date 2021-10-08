@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import pe.edu.ulima.cookiemaker.fragments.RecipeListFragment
-import pe.edu.ulima.pm.ulgamestore.model.Receta
+import pe.edu.ulima.cookiemaker.model.Receta
 
 class MainActivity : AppCompatActivity(), RecipeListFragment.OnRecipeSelectListener {
     private var fragments: ArrayList<Fragment> = arrayListOf()

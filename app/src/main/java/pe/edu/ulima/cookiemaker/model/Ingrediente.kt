@@ -1,4 +1,4 @@
-package pe.edu.ulima.pm.ulgamestore.model
+package pe.edu.ulima.cookiemaker.model
 
 data class Ingrediente(
     val nombre : String

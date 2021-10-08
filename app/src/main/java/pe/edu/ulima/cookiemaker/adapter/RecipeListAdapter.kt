@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
-import pe.edu.ulima.pm.ulgamestore.model.Receta
+import pe.edu.ulima.cookiemaker.model.Receta
 
 class RecipeListAdapter(
     private val recipeList :List<Receta>,

@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
 import pe.edu.ulima.cookiemaker.adapter.RecipeListAdapter
-import pe.edu.ulima.pm.ulgamestore.model.Receta
-import pe.edu.ulima.pm.ulgamestore.model.RecetasManager
+import pe.edu.ulima.cookiemaker.model.Receta
+import pe.edu.ulima.cookiemaker.model.RecetasManager
 
 class RecipeListFragment : Fragment() {
 
