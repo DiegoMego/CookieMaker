@@ -1,9 +1,14 @@
 package pe.edu.ulima.cookiemaker.model
 
+import pe.edu.ulima.cookiemaker.R
+
 class RecetasManager {
 
     private val mIngredientes = arrayListOf<Ingrediente>()
     private val mRecetas = arrayListOf<Receta>()
+    public val mRecetasImagenes = arrayListOf<Int>(
+        R.drawable.galletas_1, R.drawable.galletas_2, R.drawable.galletas_3, R.drawable.galletas_4
+    )
 
     init {
         mIngredientes.add(Ingrediente("Mantequilla"))
@@ -38,8 +43,7 @@ class RecetasManager {
     }
 
     fun getReceta(id : Int) : Receta? {
-        // Debe implementarlo !!!
-        return null
+        return mRecetas.filter { it.id == id }.firstOrNull()
     }
 
     fun getIngredientes() : List<Ingrediente> {

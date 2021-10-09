@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
@@ -16,6 +17,7 @@ class RecipeListFragment : Fragment() {
 
     interface OnRecipeSelectListener {
         fun OnSelect(receta : Receta)
+        fun OnAddRecipeClick()
     }
 
     private var listener : OnRecipeSelectListener? = null
@@ -36,9 +38,15 @@ class RecipeListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val butAddRecipe = view.findViewById<Button>(R.id.butAddRecipe)
+
+        butAddRecipe.setOnClickListener{ _ : View ->
+            listener?.OnAddRecipeClick()
+        }
+
         val rviRecipeList : RecyclerView = view.findViewById(R.id.rviRecipeList)
         rviRecipeList.adapter = RecipeListAdapter(
-            RecetasManager().getRecetas(),
+            RecetasManager().getInstance().getRecetas(),
         ) {
             receta : Receta ->
             listener?.OnSelect(receta)

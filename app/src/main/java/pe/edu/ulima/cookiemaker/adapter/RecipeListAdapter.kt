@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
 import pe.edu.ulima.cookiemaker.model.Receta
+import pe.edu.ulima.cookiemaker.model.RecetasManager
 
 class RecipeListAdapter(
     private val recipeList :List<Receta>,
@@ -18,11 +18,13 @@ class RecipeListAdapter(
                 view : View, val listener : (Receta) -> Unit, val recipeList: List<Receta>
             ) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
+                val tviRecipeId : TextView
                 val iviRecipeImage : ImageView
                 val tviRecipeName : TextView
                 val tviUserName : TextView
 
                 init {
+                    tviRecipeId = view.findViewById(R.id.tviRecipeId)
                     iviRecipeImage = view.findViewById(R.id.iviRecipeImage)
                     tviRecipeName = view.findViewById(R.id.tviRecipeName)
                     tviUserName = view.findViewById(R.id.tviUserName)
@@ -41,10 +43,12 @@ class RecipeListAdapter(
         return ViewHolder(view, listener, recipeList)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
+    {
+        holder.tviRecipeName.text = recipeList[position].id.toString()
         holder.tviRecipeName.text = recipeList[position].nombre
         holder.tviUserName.text = recipeList[position].usuario
-        holder.iviRecipeImage.setImageResource(R.drawable.galletas_1)
+        holder.iviRecipeImage.setImageResource(RecetasManager().getInstance().mRecetasImagenes.random())
     }
 
     override fun getItemCount(): Int {

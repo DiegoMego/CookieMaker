@@ -2,6 +2,7 @@ package pe.edu.ulima.cookiemaker.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ class RecipeRegistrationFragment(val username : String) : Fragment() {
     private var listener : OnButtonClicked? = null
 
     private var ingredients = arrayListOf<Ingrediente>()
+    private var clearIngredients : Boolean = false
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -41,7 +43,11 @@ class RecipeRegistrationFragment(val username : String) : Fragment() {
     ): View? {
         val args = this.arguments
         val ingredientName = args?.get("ingredient")
-        if (ingredientName != null) {
+        Log.i("ingredientName", "$ingredientName")
+        if (clearIngredients) {
+            ingredients.clear()
+            clearIngredients = false
+        } else if (ingredientName != null) {
             ingredients.add(Ingrediente(ingredientName.toString()))
         }
         return inflater.inflate(R.layout.fragment_recipe_registration, container, false)
@@ -68,6 +74,12 @@ class RecipeRegistrationFragment(val username : String) : Fragment() {
             } else{
                 val receta = Receta(id, nombreReceta.text.toString(), username, ingredients)
                 RecetasManager().getInstance().addReceta(receta)
+
+                nombreReceta.setText("")
+                clearIngredients = true
+
+                val rviRecipe = view.findViewById<RecyclerView>(R.id.rviRecipeRegis)
+
                 listener?.onClick("recipe_details")
             }
         }
