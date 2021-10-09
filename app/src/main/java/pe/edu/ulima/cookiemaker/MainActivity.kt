@@ -12,6 +12,14 @@ import pe.edu.ulima.cookiemaker.model.Ingrediente
 import pe.edu.ulima.cookiemaker.model.Receta
 import pe.edu.ulima.cookiemaker.shared.*
 
+/*
+Integrantes:
+   IZAGUIRRE CASTRO ANDONI TOMAS (20142881)
+   MEGO FERNANDEZ DIEGO ALONSO (20100696)
+
+   REPOSITORIO: https://github.com/DiegoMego/CookieMaker
+* */
+
 class MainActivity : AppCompatActivity(), RecipeListFragment.OnRecipeSelectListener, RecipeRegistrationFragment.OnButtonClicked, SelectIngredientFragment.OnIngredientSelectedListener {
    private val fragments = mutableListOf<Fragment>()
 
