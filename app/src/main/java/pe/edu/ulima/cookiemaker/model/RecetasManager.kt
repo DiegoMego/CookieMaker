@@ -38,7 +38,6 @@ class RecetasManager {
     }
 
     fun getReceta(id : Int) : Receta? {
-        // Debe implementarlo !!!
         return null
     }
 

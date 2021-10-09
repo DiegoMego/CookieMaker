@@ -38,7 +38,7 @@ class RecipeListFragment : Fragment() {
 
         val rviRecipeList : RecyclerView = view.findViewById(R.id.rviRecipeList)
         rviRecipeList.adapter = RecipeListAdapter(
-            RecetasManager().getRecetas(),
+            RecetasManager().getInstance().getRecetas(),
         ) {
             receta : Receta ->
             listener?.OnSelect(receta)
