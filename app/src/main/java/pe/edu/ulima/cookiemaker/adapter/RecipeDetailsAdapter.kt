@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
 import pe.edu.ulima.cookiemaker.model.Ingrediente
@@ -11,7 +12,7 @@ import pe.edu.ulima.cookiemaker.model.Ingrediente
 class RecipeDetailsAdapter (private val ingredientsList : List<Ingrediente>) :
 RecyclerView.Adapter<RecipeDetailsAdapter.ViewHolder>() {
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-        val ingredientItem : Button = view.findViewById(R.id.button_Ingredients_Name)
+        val ingredientItem : TextView = view.findViewById(R.id.tvi_ingredients_name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
