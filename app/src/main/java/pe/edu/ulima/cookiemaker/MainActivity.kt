@@ -2,10 +2,9 @@ package pe.edu.ulima.cookiemaker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import pe.edu.ulima.cookiemaker.fragments.RecipeListFragment
 import pe.edu.ulima.cookiemaker.fragments.RecipeRegistrationFragment
 import pe.edu.ulima.cookiemaker.fragments.SelectIngredientFragment
 import pe.edu.ulima.cookiemaker.model.Ingrediente
@@ -17,14 +16,11 @@ class MainActivity : AppCompatActivity(), RecipeRegistrationFragment.OnButtonCli
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fragments.add(RecipeRegistrationFragment())
-        fragments.add(SelectIngredientFragment())
-        //fragments.add(RecipeDetailsFragment())
+        val username = intent.getBundleExtra("data")?.getString("username").toString()
 
-        /*
-        val username = intent.getBundleExtra("data")?.getString("username")
-        findViewById<TextView>(R.id.tviUserName).text = username
-         */
+        fragments.add(RecipeRegistrationFragment(username))
+        fragments.add(SelectIngredientFragment())
+        fragments.add(RecipeListFragment())
 
         val ft = supportFragmentManager.beginTransaction()
         ft.add(R.id.flaContent, fragments[0])
@@ -33,7 +29,10 @@ class MainActivity : AppCompatActivity(), RecipeRegistrationFragment.OnButtonCli
     }
 
     private fun changeRecipeRegistrationFragment(ingredient : Ingrediente) {
+        val bundle = Bundle()
+        bundle.putString("ingredient", ingredient.nombre)
         val fragment = fragments[0]
+        fragment.arguments = bundle
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.flaContent, fragment)
 
@@ -48,26 +47,20 @@ class MainActivity : AppCompatActivity(), RecipeRegistrationFragment.OnButtonCli
         ft.commit()
     }
 
-    /*
-    private fun changeRecipeDetailsFragment() {
-        val ete_recipe_name = findViewById(R.id.editText_Name)
-        if (ete_recipe_name!!.text.toString() == "") {
-            Toast.makeText(this, "Ingrese un nombre para la receta, por favor", Toast.LENGTH_LONG).show()
-        }else {
-            val fragment = fragments[3]
-            val ft = supportFragmentManager.beginTransaction()
-            ft.replace(R.id.flaContent, fragment)
+    private fun changeRecipeListFragment() {
+        val fragment = fragments[2]
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.flaContent, fragment)
 
-            ft.commit()
-        }
+        ft.commit()
     }
-     */
 
+    //Checks which button is being pressed and changes the fragment accordingly
     override fun onClick(button: String) {
         if (button == "ingredients") {
             changeSelectIngredientFragment()
         }else if (button == "recipe_details"){
-            //
+            changeRecipeListFragment()
         }
     }
 
