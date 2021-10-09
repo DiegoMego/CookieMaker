@@ -1,9 +1,11 @@
 package pe.edu.ulima.cookiemaker.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
@@ -20,14 +22,16 @@ class RecipeDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        recipeId = this.arguments?.get("RecipeId").toString().toInt()
         return inflater.inflate(R.layout.fragment_recipe_details, container, false)
-        recipeId = arguments?.getInt("RecipeId", 0)!!
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val recipeName : TextView = view.findViewById(R.id.tviRecipeName)
         val rviRecipeList : RecyclerView = view.findViewById(R.id.rviIngredientsList)
         val recipe : Receta? = RecetasManager().getInstance().getReceta(recipeId)
+        recipeName.text = recipe?.nombre
         rviRecipeList.adapter = RecipeDetailsAdapter(recipe!!.ingredientes)
     }
 }

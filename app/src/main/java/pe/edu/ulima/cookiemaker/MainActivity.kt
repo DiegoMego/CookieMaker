@@ -83,6 +83,14 @@ class MainActivity : AppCompatActivity(), RecipeListFragment.OnRecipeSelectListe
 
     fun ChangeToRecipeDetails(receta: Receta){
         //Implement change to recipe details fragment
+        val bundle = Bundle()
+        bundle.putString("RecipeId", receta.id.toString())
+        val fragment = fragments[RecipeDetailsView]
+        fragment.arguments = bundle
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.flaContent, fragment)
+
+        ft.commit()
     }
 
     override fun OnSelect(receta: Receta) {
