@@ -4,7 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
 import pe.edu.ulima.cookiemaker.model.Ingrediente
@@ -17,7 +17,7 @@ class IngredientsListAdapter(
         view: View,
         val listener : (Ingrediente) -> Unit,
         val ingredientsList: List<Ingrediente>) : RecyclerView.ViewHolder(view), View.OnClickListener {
-        val butIngredientName: Button = view.findViewById(R.id.button_Ingredients_Name)
+        val butIngredientName: TextView = view.findViewById(R.id.tvi_ingredients_name)
         init {
             view.setOnClickListener(this)
         }
