@@ -1,9 +1,14 @@
 package pe.edu.ulima.cookiemaker.model
 
+import pe.edu.ulima.cookiemaker.R
+
 class RecetasManager {
 
     private val mIngredientes = arrayListOf<Ingrediente>()
     private val mRecetas = arrayListOf<Receta>()
+    public val mRecetasImagenes = arrayListOf<Int>(
+        R.drawable.galletas_1, R.drawable.galletas_2, R.drawable.galletas_3, R.drawable.galletas_4
+    )
 
     init {
         mIngredientes.add(Ingrediente("Mantequilla"))

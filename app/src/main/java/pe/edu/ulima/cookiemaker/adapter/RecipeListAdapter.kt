@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
 import pe.edu.ulima.cookiemaker.model.Receta
+import pe.edu.ulima.cookiemaker.model.RecetasManager
 
 class RecipeListAdapter(
     private val recipeList :List<Receta>,
@@ -47,7 +48,7 @@ class RecipeListAdapter(
         holder.tviRecipeName.text = recipeList[position].id.toString()
         holder.tviRecipeName.text = recipeList[position].nombre
         holder.tviUserName.text = recipeList[position].usuario
-        holder.iviRecipeImage.setImageResource(R.drawable.galletas_1)
+        holder.iviRecipeImage.setImageResource(RecetasManager().getInstance().mRecetasImagenes.random())
     }
 
     override fun getItemCount(): Int {
