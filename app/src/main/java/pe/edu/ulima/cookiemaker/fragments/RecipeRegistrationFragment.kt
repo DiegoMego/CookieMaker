@@ -2,28 +2,28 @@ package pe.edu.ulima.cookiemaker.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import pe.edu.ulima.cookiemaker.R
-import pe.edu.ulima.cookiemaker.adapter.IngredientsListAdapater
-import pe.edu.ulima.cookiemaker.model.Ingrediente
-import pe.edu.ulima.cookiemaker.model.RecetasManager
+
 
 class RecipeRegistrationFragment : Fragment() {
 
-    interface OnIngredientSelectedListener {
-        fun OnSelect(ingredient : Ingrediente)
-    }
-    private var listener : OnIngredientSelectedListener? = null
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        listener = context as OnIngredientSelectedListener
+    interface OnButtonClicked {
+        fun onClick(button: String)
     }
 
+    private var listener : OnButtonClicked? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        listener = context as? OnButtonClicked
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,12 +35,16 @@ class RecipeRegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val rviRecipeRegis = view.findViewById<RecyclerView>(R.id.rviRecipeRegis)
-        rviRecipeRegis.adapter =
-            IngredientsListAdapater(
-                RecetasManager().getIngredientes()
-            )  { ingredient : Ingrediente ->
-                listener?.OnSelect(ingredient)
-            }
+
+        val but_save = view.findViewById<Button>(R.id.button_Save)
+        val but_ingredient = view.findViewById<Button>(R.id.button_Ingredients)
+
+        but_ingredient.setOnClickListener { _ : View ->
+            listener?.onClick("ingredients")
+        }
+
+        but_save.setOnClickListener { _ : View ->
+            listener?.onClick("recipe_details")
+        }
     }
 }
