@@ -78,7 +78,6 @@ class MainActivity : AppCompatActivity(), RecipeListFragment.OnRecipeSelectListe
 
     override fun onSelect(ingredient: Ingrediente) {
 
-        Log.i("IngredientsFragment", "Click")
         changeRecipeRegistrationFragment(ingredient)
     }
 

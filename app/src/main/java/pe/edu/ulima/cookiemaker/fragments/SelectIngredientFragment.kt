@@ -35,13 +35,11 @@ class SelectIngredientFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.i("IngredientsFragment", "Click")
         super.onViewCreated(view, savedInstanceState)
         val rviIngred = view.findViewById<RecyclerView>(R.id.rviIngredients)
         rviIngred.adapter = IngredientsListAdapter(
             RecetasManager().getInstance().getIngredientes()
         ) { ingredient: Ingrediente ->
-            Log.i("IngredientsFragment", "Click")
             listener?.onSelect(ingredient)
         }
     }
