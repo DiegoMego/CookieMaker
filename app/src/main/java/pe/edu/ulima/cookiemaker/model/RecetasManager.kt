@@ -38,7 +38,7 @@ class RecetasManager {
     }
 
     fun getReceta(id : Int) : Receta? {
-        return null
+        return mRecetas.filter { it.id == id }.firstOrNull()
     }
 
     fun getIngredientes() : List<Ingrediente> {

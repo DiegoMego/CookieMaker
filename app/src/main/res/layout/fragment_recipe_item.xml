@@ -33,4 +33,12 @@
         app:layout_constraintEnd_toEndOf="@+id/iviRecipeImage"
         app:layout_constraintTop_toTopOf="@+id/iviRecipeImage" />
 
+    <TextView
+        android:id="@+id/tviRecipeId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/iviRecipeImage"
+        app:layout_constraintTop_toTopOf="@+id/iviRecipeImage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
